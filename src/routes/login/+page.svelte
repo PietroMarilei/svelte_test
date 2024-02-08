@@ -1,6 +1,7 @@
 <script lang="ts">
   import axios from "axios";
   import { jwtToken } from "../../stores/Store.js";
+ import { goto } from '$app/navigation';
 
   let success: boolean = false;
 
@@ -20,6 +21,8 @@
       
       jwtToken.set(token);
       success = true;
+
+      goto('/dashboard');
       
     } else {
       console.error("Errore durante il login:", response.statusText);

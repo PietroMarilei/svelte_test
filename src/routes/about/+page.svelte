@@ -1,4 +1,0 @@
-
-<div>
-    test compo
-</div>
