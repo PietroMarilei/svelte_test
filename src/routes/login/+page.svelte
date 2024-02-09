@@ -1,10 +1,10 @@
 <script lang="ts">
   import axios from "axios";
-  import { jwtToken } from "../../stores/Store.js";
- import { goto } from '$app/navigation';
+  // import { jwtToken } from "../../stores/Store.ts";
+  import { goto } from "$app/navigation";
 
   let success: boolean = false;
-
+  
   let username: string = "";
   let password: string = "";
 
@@ -15,15 +15,16 @@
     });
 
     if (response.status === 200) {
-      
       console.log("Login riuscito");
       const token = response.data;
+      sessionStorage.setItem("jwtToken", token);
+
+      console.log(sessionStorage);
       
-      jwtToken.set(token);
+      // jwtToken.set(token);
       success = true;
 
-      goto('/dashboard');
-      
+      goto("/dashboard");
     } else {
       console.error("Errore durante il login:", response.statusText);
     }
@@ -31,7 +32,7 @@
 </script>
 
 <main>
-  <h1>Login</h1>
+  <h1 class="text-center">Login</h1>
   <form on:submit|preventDefault={handleLogin}>
     <label for="username">Username:</label>
     <input type="text" id="username" bind:value={username} required />
@@ -41,10 +42,11 @@
 
     <button type="submit">Login</button>
   </form>
-
+  
+  
 
   {#if success}
-    <div>logged in -> {$jwtToken}</div>
+    <div>logged in -> </div>
   {/if}
 </main>
 

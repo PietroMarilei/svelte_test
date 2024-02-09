@@ -1,6 +1,8 @@
+// import { persisted } from 'svelte-persisted-store'
 
-  import { writable } from "svelte/store";
-
-export let jwtToken = writable<string | null>("test");
+// // First param `preferences` is the local storage key.
+// // Second param is the initial value.
+// export const jwtToken = persisted('jwtToken', <string | null>("test"))
+ 
 
 
