@@ -33,7 +33,10 @@
 
 <style>
     main{
-      font-family: 'Raleway', sans-serif;;
-
+      font-family: 'Roboto', sans-serif;
+        background-color: rgb(52, 52, 52);
+        color: whitesmoke;
     }
+
+
 </style>
