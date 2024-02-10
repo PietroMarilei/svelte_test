@@ -2,6 +2,7 @@
   import { onMount } from "svelte";
   import axios from "axios";
   import { goto } from "$app/navigation";
+import Layout from "$lib/+layout.svelte";
 
 
   // import { jwtToken } from '../../stores/Store.js';
@@ -40,13 +41,22 @@
 
 
 <main>
+  <Layout>
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h1>Todo List</h1>
+      <ul>
+        {#each todos as todo (todo)}
+          <li>{todo.text}</li>
+        {/each}
+      </ul>
+    </div>
+  </div>
+</div>
+  </Layout>
   
-  <h1>Todo List</h1>
-  <ul>
-    {#each todos as todo (todo)}
-      <li>{todo.text}</li>
-    {/each}
-  </ul>
 </main>
 
 <style>

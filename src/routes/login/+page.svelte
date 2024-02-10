@@ -40,7 +40,7 @@ import Layout from "$lib/+layout.svelte";
       <div class="col d-flex justify-content-center">
 
          <form on:submit|preventDefault={handleLogin} 
-    style="width: 22rem;" data-bitwarden-watching="1">
+    style="width: 22rem;" >
         <!-- Email input -->
         <div class="form-outline mb-4 ">
           <div class="d-flex justify-content-center">
