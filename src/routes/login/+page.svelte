@@ -2,6 +2,8 @@
   import axios from "axios";
   // import { jwtToken } from "../../stores/Store.ts";
   import { goto } from "$app/navigation";
+import Layout from "$lib/+layout.svelte";
+
 
   let success: boolean = false;
   
@@ -32,7 +34,8 @@
 </script>
 
 <main>
-  <h1 class="text-center">Login</h1>
+  <Layout>
+   <h1 class="text-center">Login</h1>
   <form on:submit|preventDefault={handleLogin}>
     <label for="username">Username:</label>
     <input type="text" id="username" bind:value={username} required />
@@ -48,6 +51,9 @@
   {#if success}
     <div>logged in -> </div>
   {/if}
+  </Layout>
+
+  
 </main>
 
 <style lang="scss">
