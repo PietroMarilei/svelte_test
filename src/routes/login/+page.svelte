@@ -35,7 +35,7 @@ import Layout from "$lib/+layout.svelte";
     window.location.href = "http://localhost:3000/auth/google";
   }
   function redirectToFacebook() {
-    goto("http://localhost:3000/auth/facebook");
+    window.location.href ="http://localhost:3000/auth/facebook";
   }
 </script>
 
@@ -85,7 +85,7 @@ import Layout from "$lib/+layout.svelte";
             <button type="button" class="btn btn-link btn-floating mx-1" on:click={redirectToGoogleLogin}>
               <i class="fab fa-google"></i> Sign in with Google
             </button>
-            <button on:click={redirectToFacebook}>Login with Express Backend</button>
+            <button on:click={redirectToFacebook}>Login with facebook</button>
           </div>
         </form>
       </div>
