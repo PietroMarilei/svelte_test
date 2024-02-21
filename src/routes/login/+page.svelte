@@ -32,10 +32,10 @@ import Layout from "$lib/+layout.svelte";
     }
   }
    function redirectToGoogleLogin() {
-    window.location.href = "http://localhost:3000/auth/google";
+    window.location.href = "http://localhost:3000/google";
   }
   function redirectToFacebook() {
-    window.location.href ="http://localhost:3000/auth/facebook";
+    window.location.href ="http://localhost:3000/facebook";
   }
 </script>
 
@@ -49,7 +49,7 @@ import Layout from "$lib/+layout.svelte";
             <div class="d-flex justify-content-center">
               <label class="form-label text-center" for="form2Example1">Username</label>
             </div>
-            <input type="text" id="form2Example1" class="form-control" bind:value={username} required>
+            <input type="text" id="form2Example1" class="form-control" bind:value={username} >
           </div>
 
           <!-- Password input -->
@@ -57,14 +57,14 @@ import Layout from "$lib/+layout.svelte";
             <div class="d-flex justify-content-center">
               <label class="form-label text-center" for="form2Example2">Password</label>
             </div>
-            <input type="password" id="form2Example2" class="form-control" bind:value={password} required>
+            <input type="password" id="form2Example2" class="form-control" bind:value={password} >
           </div>
 
           <!-- 2 column grid layout for inline styling -->
           <div class="row mb-4">
             <div class="col d-flex justify-content-center">
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="form2Example31" checked="">
+                <input class="form-check-input" type="checkbox" value="" id="form2Example31" >
                 <label class="form-check-label" for="form2Example31"> Remember me </label>
               </div>
             </div>
@@ -85,7 +85,7 @@ import Layout from "$lib/+layout.svelte";
             <button type="button" class="btn btn-link btn-floating mx-1" on:click={redirectToGoogleLogin}>
               <i class="fab fa-google"></i> Sign in with Google
             </button>
-            <button on:click={redirectToFacebook}>Login with facebook</button>
+            <button type="button" class="btn btn-link btn-floating mx-1" on:click={redirectToFacebook}>Login with facebook</button>
           </div>
         </form>
       </div>
